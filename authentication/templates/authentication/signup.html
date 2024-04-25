@@ -6,6 +6,17 @@
     <title>Signup</title>
 </head>
 <body>
+
+        {% for message in messages%}
+        <div class="alert alter-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong>{{message}}
+            <button type="button" class="close" data-dismiss="alert" 
+            aria-label="close"></button>
+            <span aria-hidden="true">&times;</span>
+        </div>
+        {%endfor %}
+
+        
     <h3>Sign Up</h3>
     <form action="/signup" method="post">
         {% csrf_token %}

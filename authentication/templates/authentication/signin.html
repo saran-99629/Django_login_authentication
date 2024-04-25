@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Signin</title>
 </head>
 <body>
-    <h3>Sign Up</h3>
+    {% for message in messages%}
+    <div class="alert alter-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss="alert" 
+        aria-label="close"></button>
+        <span aria-hidden="true">&times;</span>
+    </div>
+    {%endfor %}
+
+
+    <h3>Sign In</h3>
     <form action="" method="post">
         {% csrf_token %}
         <label for="">Username</label>
