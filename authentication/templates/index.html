@@ -1,9 +1,11 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Authentication</title>
+    <link rel="stylesheet" href="{% static 'authentication/index.css' %}">
     
 </head>
 {%load static%}
@@ -16,17 +18,24 @@
         <span aria-hidden="true">&times;</span>
     </div>
     {%endfor %}
-
-    <h3> Welcome to the Saran's Website </h3>
+    <div class="wrapper">
+        <div class="subhead">
+    <h1> Welcome to Spike </h1>
 
 
     {% if user.is_authenticated %}
-    <h3> Hello {{ fname }}</h3>
-    <h4>You're succesfully logged in </h4>
-    <button type="submit"><a href="/signout">Signout</a></button>
+    <h1> Hello {{ fname }}</h1>
+    <h1>You're succesfully logged in </h1>
+    
+    <button type="submit" class="btn"><a href="/signout">SignOut</a></button>
+    
     {% else %}
-    <button type="submit"><a href="/signup">Signup</a></button>
-    <button type="submit"><a href="/signin">Signin</a></button>
+    <!-- <button type="submit"><a href="/signup">Signup</a></button> -->
+
+    <button type="submit" class="btn"><a href="/signup">Signup</a></button>
+    <button type="submit" class="btn"><a href="/signin">SignIn</a></button>
     {% endif %}
+</div>
+</div>
 </body>
 </html>
