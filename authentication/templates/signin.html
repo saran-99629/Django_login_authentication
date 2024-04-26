@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <link  rel="stylesheet" href="{% static 'authentication/style.css' %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+
+<body>
+
+
+        {% for message in messages%}
+        <div class="alert alter-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong>{{message}}
+            <button type="button" class="close" data-dismiss="alert" 
+            aria-label="close"></button>
+            <span aria-hidden="true">&times;</span>
+        </div>
+        {%endfor %}
+
+        
+    <!-- <h3>Sign Up</h3>
+    <form action="/signup" method="post">
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" id="Username" name="username" placeholder="enter your name">
+        <br>
+        <label for="">First name</label>
+        <input type="text" id="fname" name="fname" placeholder="enter your first name">
+<br>
+        <label for="">Last name</label>
+        <input type="text" id="lname" name="lname" placeholder="enter your last name">
+<br>
+        <label for="">Email address</label>
+        <input type="email" id="email" name="email" placeholder="enter your email address">
+<br>
+        <label for="">Password</label>
+        <input type="password" id="pass1" name="pass1" placeholder="enter your password">
+<br>
+        <label for="">Conform your password</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Conform Password">
+       <br> <button type="submit">Sign up</button>
+    </form> -->
+
+
+    <div class="wrapper">
+        <form action="index.html" method="post">
+                {% csrf_token %}
+          <h1>Signin</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Username" id="Username" name="username" required>
+            <i class='bx bxs-user'></i>
+          </div>
+
+          {% comment %} <div class="input-box">
+                <input type="text" id="fname" name="fname" placeholder="First Name" required>
+                <i class='bx bxs-lock-alt' ></i>
+              </div>
+
+              <div class="input-box">
+                <input type="text" id="lname" name="lname" placeholder="Last Name" required>
+                <i class='bx bxs-lock-alt' ></i>
+              </div>
+
+              <div class="input-box">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <i class='bx bxs-lock-alt' ></i>
+              </div> {% endcomment %}
+
+          <div class="input-box">
+            <input type="password" id="pass1" name="pass1" placeholder="Password" required>
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+
+          {% comment %} <div class="input-box">
+                <input type="password" id="pass2" name="pass2" placeholder="Conform Password" required>
+                <i class='bx bxs-lock-alt' ></i>
+              </div> {% endcomment %}
+
+
+          {% comment %} <div class="remember-forgot">
+            <label><input type="checkbox">Remember Me</label>
+            <a href="#">Forgot Password</a>
+          </div> {% endcomment %}
+
+
+          <button type="submit" class="btn">Login</button>
+
+
+          {% comment %} <div class="register-link">
+
+
+            <p>Dont have an account? <a href="#">Register</a></p> {% endcomment %}
+
+
+          </div>
+
+
+        </form>
+      </div>
+
+
+</body>
+</html>

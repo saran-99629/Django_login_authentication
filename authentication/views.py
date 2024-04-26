@@ -13,7 +13,7 @@ from . tokens import generate_token
 from django.core.mail import EmailMessage, send_mail
 # Create your views here.
 def home(request):
-    return render(request,"authentication/index.html")
+    return render(request,"index.html")
 
 
 from django.db import IntegrityError
@@ -90,7 +90,7 @@ def signup(request):
         except IntegrityError:
             messages.error(request, "Username already exists. Please choose a different username.")
             return redirect('/signup')
-    return render(request, "authentication/signup.html")
+    return render(request, "signup.html")
 
 
 def signin(request):
@@ -106,7 +106,7 @@ def signin(request):
         else:
             messages.error(request, "Bad Credentials")
             return redirect('home')
-    return render(request,"authentication/signin.html")
+    return render(request,"signin.html")
 
 def signout(request):
     logout(request)
